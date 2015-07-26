@@ -1,57 +1,24 @@
-
+/**
+ * Created by Витек on 25.07.2015.
+ */
 public class Calculate {
 
-    public static void main(String[] args) {
+    public static void main(String[] arg) {
 
-        System.out.println("Calculate.");
-        double a = Double.valueOf(args[0]);
-        double b = Double.valueOf(args[1]);
+        System.out.println("Calculate...");
+        if (arg.length == 2) {
 
-        System.out.printf("Arithmetic on numbers %.2f and %.2f\n\n", a, b);
+            int first = Integer.valueOf(arg[0]);
+            int second = Integer.valueOf(arg[1]);
+            Calculator calc = new Calculator();
 
-        Calculate calculate = new Calculate();
+            calc.add(first, second);
 
-        calculate.sum(a, b);
-        calculate.subtraction(a, b);
-        calculate.division(a, b);
-        calculate.product(a, b);
-        calculate.involution(a, b);
+            System.out.println("Sum : " + calc.getResult());
 
-    }
-
-    public void sum(double a, double b) {
-
-        System.out.printf("Sum %.2f + %.2f = %.2f\n", a, b, a + b);
-    }
-
-    public void subtraction(double a, double b) {
-
-        System.out.printf("Subtraction %.2f - %.2f = %.2f\n", a, b, a - b);
-    }
-
-    public void division(double a, double b) {
-
-        if (b != 0) {
-            System.out.printf("Division %.2f / %.2f = %.2f\n", a, b, a / b);
         } else {
-            System.out.printf("Division %.2f / %.2f = You can not divide by zero!\n", a, b);
+
+            System.out.println("Enter two paramenters.");
         }
-    }
-
-    public void product(double a, double b) {
-
-        System.out.printf("Product %.2f * %.2f = %.2f\n", a, b, a * b);
-
-    }
-
-    public void involution(double a, double b) {
-
-        double c = a;
-        for (int i = 1; i < b; i++) {
-
-            c *= a;
-        }
-        System.out.printf("Involution %.2f ^ %.2f = %.2f\n",a,b,c);
-
     }
 }
