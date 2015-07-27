@@ -1,6 +1,4 @@
-/**
- * Created by Витек on 25.07.2015.
- */
+
 public class Calculate {
 
     public static void main(String[] arg) {
@@ -12,7 +10,7 @@ public class Calculate {
             int second = Integer.valueOf(arg[1]);
             Calculator calc = new Calculator();
 
-            calc.add(first, second);
+            calc.sum(first, second);
 
             System.out.println("Sum : " + calc.getResult());
 
